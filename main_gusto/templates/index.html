@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-
 {% block content %}
     <section>
         <div class="carusel">
@@ -32,15 +31,31 @@
         <h1>Меню</h1>
         <div class="menu">
             <div class="row align-items-start">
-                <div class="col" id="columnsmenu">
-                    One of three columns
-                </div>
-                <div class="col" id="columnsmenu">
-                    One of three columns
-                </div>
-                <div class="col" id="columnsmenu">
-                    One of three columns
-                </div>
+                {% for item in categories %}
+                    {% for dish in item.dishes %}
+
+                        <div class="col-4" id="columnsmenu">
+                            <div class="title">
+                                {{dish.title}}
+                            </div>
+                            <div class="dishphoto">
+                                <p class="centre"> <img src="{{ dish.photo.url }}" class="img-fluid" > </p>
+                            </div>
+                            <div class="descriptiondish">
+                                <div style="position: relative">
+                                    <span >{{ dish.description }}</span>
+                                </div>
+                            </div>
+                            <div class="pricedish">
+                                <p class="centre"> {{ dish.price }}&#8372;/{{ dish.weight }} г</p>
+                            </div>
+                            <div class="menubutton">
+                                <p class="centre"> <button type="button" class="btn btn-primary"><b>Замовити</b></button></p>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+                {% endfor %}
             </div>
         </div>
     </section>
