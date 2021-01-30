@@ -27,6 +27,40 @@
             </div>
         </div>
     </section>
+
+    <section>
+        <h1>Меню от шефа</h1>
+        <div class="menu">
+            <div class="row align-items-start">
+                {% for item in special_categories %}
+                    {% for dish in item.dishes %}
+
+                        <div class="col-4" id="columnsmenu">
+                            <div class="title">
+                                {{dish.title}}
+                            </div>
+                            <div class="dishphoto">
+                                <p class="centre"> <img src="{{ dish.photo.url }}" class="img-fluid" > </p>
+                            </div>
+                            <div class="descriptiondish">
+                                <div style="position: relative">
+                                    <span >{{ dish.description }}</span>
+                                </div>
+                            </div>
+                            <div class="pricedish">
+                                <p class="centre"> {{ dish.price }}&#8372;/{{ dish.weight }} г</p>
+                            </div>
+                            <div class="menubutton">
+                                <p class="centre"> <button type="button" class="btn btn-primary"><b>Замовити</b></button></p>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
     <section>
         <h1>Меню</h1>
         <div class="menu">
@@ -59,4 +93,44 @@
             </div>
         </div>
     </section>
+
+    <section>
+        <h1>Меню</h1>
+        <div class="menu">
+            <div class="row align-items-start">
+                {% for item in events %}
+
+
+                    <div class="col-4" id="columnsmenu">
+                        <div class="title">
+                            {{item.title}}
+                        </div>
+                        <div class="dishphoto">
+                            <p class="centre"> <img src="{{ item.photo.url }}" class="img-fluid" > </p>
+                        </div>
+                        <div class="descriptiondish">
+                            <div style="position: relative">
+                                <span >{{ item.description }}</span>
+                            </div>
+                        </div>
+                        <div class="descriptiondish">
+                            <div style="position: relative">
+                                <span >{{ item.event_date }}</span>
+                            </div>
+                        </div>
+                        <div class="descriptiondish">
+                            <div style="position: relative">
+                                <span >{{ item.event_time }}</span>
+                            </div>
+                        </div>
+                        <div class="pricedish">
+                            <p class="centre"> {{ item.price }}&#8372;</p>
+                        </div>
+                    </div>
+
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
 {% endblock %}
