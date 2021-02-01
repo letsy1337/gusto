@@ -1,0 +1,76 @@
+.d-block {
+    padding: 20px;
+    width: 100%;
+    max-height: 500px;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.menu {
+    padding: 10px;
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    justify-content: center;
+}
+.bui
+{
+    margin: 0 auto;
+}
+.dishphoto
+{
+    margin: 0 auto;
+}
+#columnsmenu {
+    width: 30%;
+    height: 100%;
+    border: 4px double black;
+    margin-bottom: 15px;
+}
+
+.navpanel
+{
+    margin: 0 auto;
+    background-color: #0d6efd;
+}
+.centre
+{
+    text-align: center;
+}
+.col-4
+{
+    margin:0 auto;
+}
+.title
+{
+    text-align: center;
+    margin: 0 auto;
+    font-weight: bold;
+    font-size: 30px;
+    padding: 10px;
+}
+.descriptiondish
+{
+    position: relative;
+    text-align: center;
+    line-height: 26px;
+    font-size: 23px;
+    padding: 10px;
+    height: 300px;
+}
+.btn-primary
+{
+    background-color: #c12727;
+    border-color: #c12727;
+    width: 50%;
+    height: 100%;
+}
+.pricedish
+{
+    width: 100%;
+    font-size: 20px;
+    height: 100%;
+}

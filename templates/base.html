@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,91 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-
+    <link rel="stylesheet" type="text/css" href="{% static '/styles.css' %}" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-
-    <style>
-        .d-block {
-            padding: 20px;
-            width: 100%;
-            max-height: 500px;
-        }
-
-        h1 {
-            text-align: center;
-            font-weight: bold;
-        }
-
-        .menu {
-            padding: 10px;
-            width: 80%;
-            height: 100%;
-            margin: 0 auto;
-            justify-content: center;
-        }
-        .bui
-        {
-            margin: 0 auto;
-        }
-        .dishphoto
-        {
-            margin: 0 auto;
-        }
-        #columnsmenu {
-            width: 30%;
-            height: 100%;
-            border: 4px double black;
-            margin-bottom: 15px;
-        }
-
-        .navpanel
-        {
-            margin: 0 auto;
-        }
-        .centre
-        {
-            text-align: center;
-        }
-        .col-4
-        {
-            margin:0 auto;
-        }
-        .title
-        {
-            text-align: center;
-            margin: 0 auto;
-            font-weight: bold;
-            font-size: 30px;
-            padding: 10px;
-        }
-        .descriptiondish
-        {
-            position: relative;
-            text-align: center;
-            line-height: 26px;
-            font-size: 23px;
-            padding: 10px;
-            height: 300px;
-        }
-        .btn
-        {
-            background-color: #c12727;
-            width: 50%;
-            height: 100%;
-        }
-        .pricedish
-        {
-            width: 100%;
-            font-size: 20px;
-            height: 100%;
-        }
-    </style>
-
 
     <title>Hello, world!</title>
 </head>
@@ -99,7 +21,7 @@
 
 <!-- NAV  -->
 <div class="navpanel">
-    <nav class="navbar navbar-dark" style="background-color: #c12727;">
+    <nav class="navbar navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
