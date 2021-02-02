@@ -27,7 +27,7 @@ class Dish(models.Model):
     description = models.CharField(max_length=300, null=True)
     photo = models.ImageField(upload_to=get_file_name_dishes, null=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    weight = models.IntegerField(max_length=10, null=True)
+    weight = models.IntegerField(null=True)
 
     def __str__(self):
         return f'{self.title}'
