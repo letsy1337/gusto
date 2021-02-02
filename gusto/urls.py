@@ -23,6 +23,8 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     path('admin', admin.site.urls),
     path('', include('main_gusto.urls')),
+    path('menu/', include('menu_gusto.urls')),
+    path('events', include('events_gusto.urls'))
 ]
 urlpatterns += staticfiles_urlpatterns()
 

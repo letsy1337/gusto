@@ -2,7 +2,7 @@
 {% block content %}
 
     {# Банера #}
-    <section>
+    <section id = "banners">
         <div class="carusel">
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
@@ -30,7 +30,7 @@
         </div>
     </section>
     {# Специальное меню #}
-    <section>
+    <section id ="special_menu">
         <h2>Спеціальні пропозиції!</h2>
         <div class="carusel">
             <div id="carouselExampleControls1" class="carousel slide" data-bs-ride="carousel">
@@ -45,7 +45,7 @@
                                                 {{dish.title}}
                                             </div>
                                             <div class="dishspecialphoto">
-                                                <p class="centre"> <img src="{{ dish.photo.url }}" width="512px" height="512px" class = "img-fluid"> </p>
+                                                <p class="centre"> <img src="{{ dish.photo.url }}" width="512px" height="512px"> </p>
                                             </div>
                                             <div class="descriptionspecialdish">
                                                 <div>
@@ -66,10 +66,10 @@
                                     <div class="row align-items-start">
                                         <div class="col-4" id="columnsspecialmenu">
                                             <div class="title">
-                                                {{dish.title}}
+                                                <a href="/menu/{{ dish.pk }}">{{dish.title}}</a>
                                             </div>
                                             <div class="dishspecialphoto">
-                                                <p class="centre"> <img src="{{ dish.photo.url }}" width="512px" height="512px" class = "img-fluid"> </p>
+                                                <p class="centre"> <img src="{{ dish.photo.url }}" width="512px" height="512px" > </p>
                                             </div>
                                             <div class="descriptionspecialdish">
                                                 <div>
@@ -101,7 +101,7 @@
         </div>
     </section>
     {# Меню #}
-    <section>
+    <section id="menu">
         <h1>Меню</h1>
         <div class="menu">
             <div class="row align-items-start">
@@ -113,10 +113,10 @@
                                 {{dish.title}}
                             </div>
                             <div class="dishphoto">
-                                <p class="centre"> <img src="{{ dish.photo.url }}" class="img-fluid" > </p>
+                                <p class="centre"> <img src="{{ dish.photo.url }}" class="img-fluid"  > </p>
                             </div>
                             <div class="descriptiondish">
-                                <div style="position: relative">
+                                <div style=>
                                     <span >{{ dish.description }}</span>
                                 </div>
                             </div>

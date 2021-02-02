@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+     <div class="col-4" id="columnsmenu">
+                            <div class="title">
+                                {{dish.title}}
+                            </div>
+                            <div class="dishphoto">
+                                <p class="centre"> <img src="{{ dish.photo.url }}" class="img-fluid" > </p>
+                            </div>
+                            <div class="descriptiondish">
+                                <div>
+                                    <span >{{ dish.description }}</span>
+                                </div>
+                            </div>
+                            <div class="pricedish">
+                                <p class="centre"> {{ dish.price }}&#8372;/{{ dish.weight }} г</p>
+                            </div>
+                            <div class="menubutton">
+                                <p class="centre"> <button type="button" class="btn btn-primary"><b>Замовити</b></button></p>
+                            </div>
+                        </div>
+{% endblock %}
+
