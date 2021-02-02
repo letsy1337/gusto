@@ -134,4 +134,29 @@
         </div>
     </section>
 
+    <section id = "reservation">
+    <div class="container">
+        <div class="col-md-8 col-md-offset-2">
+            <form name="sendMessage" id = "contactForm" novalidate action="" method="post">
+                {% csrf_token %}
+                <div class="row">
+        <div class="col-md-6">
+            {{ form.user_name }}
+
+        </div>
+                 <div class="col-md-6">
+                     {{ form.user_email }}
+        </div>
+                    </div>
+                <div class="row">
+                    <div class="col-md-6">
+                     {{ form.message }}
+                        </div>
+        </div>
+                <button type="submit" class="btn btn-custom btn-lg"> button</button>
+            </form>
+        </div>
+    </div>
+
+    </section>
 {% endblock %}

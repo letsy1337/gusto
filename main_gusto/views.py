@@ -1,9 +1,16 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Category, Dish, Event, Banners
 import datetime
+from .forms import UserMessageForm
 
 
 def main(request):
+    if request.method == 'POST':
+        form = UserMessageForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('/')
+
     special_categories = Category.objects.filter(is_visible=True).filter(is_special=True).order_by('category_order')
     for item in special_categories:
         item.dishes = Dish.objects.filter(category=item.pk)
@@ -16,9 +23,12 @@ def main(request):
 
     banners = Banners.objects.filter(is_visible=True)
 
+    users_messages_form = UserMessageForm()
+
     return render(request, 'index.html', context={'categories': categories,
                                                   'special_categories': special_categories,
                                                   'events': events,
                                                   'banners': banners,
+                                                  'form': users_messages_form,
                                                   }
                   )
