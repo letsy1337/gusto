@@ -42,7 +42,7 @@
                                     <div class="row align-items-start">
                                         <div class="col-4" id="columnsspecialmenu">
                                             <div class="title">
-                                                {{dish.title}}
+                                                <a style="text-decoration: none" href="/menu/{{ dish.pk }}">{{dish.title}}</a>
                                             </div>
                                             <div class="dishspecialphoto">
                                                 <p class="centre"> <img src="{{ dish.photo.url }}" width="512px" height="512px"> </p>
@@ -66,7 +66,7 @@
                                     <div class="row align-items-start">
                                         <div class="col-4" id="columnsspecialmenu">
                                             <div class="title">
-                                                <a href="/menu/{{ dish.pk }}">{{dish.title}}</a>
+                                                <a style="text-decoration: none" href="/menu/{{ dish.pk }}">{{dish.title}}</a>
                                             </div>
                                             <div class="dishspecialphoto">
                                                 <p class="centre"> <img src="{{ dish.photo.url }}" width="512px" height="512px" > </p>
@@ -110,7 +110,8 @@
 
                         <div class="col-4" id="columnsmenu">
                             <div class="title">
-                                {{dish.title}}
+
+                                <a style="text-decoration: none" class = "mainmenu" href="/menu/{{ dish.pk }}">{{dish.title}}</a>
                             </div>
                             <div class="dishphoto">
                                 <p class="centre"> <img src="{{ dish.photo.url }}" class="img-fluid"  > </p>
@@ -133,30 +134,66 @@
             </div>
         </div>
     </section>
-{# Резервация #}
-    <section id = "reservation">
-    <div class="container">
-        <div class="col-md-8 col-md-offset-2">
-            <form name="sendMessage" id = "contactForm" novalidate action="" method="post">
-                {% csrf_token %}
-                <div class="row">
-        <div class="col-md-6">
-            {{ form.user_name }}
-
-        </div>
-                 <div class="col-md-6">
-                     {{ form.user_email }}
-        </div>
-                    </div>
-                <div class="row">
-                    <div class="col-md-6">
-                     {{ form.message }}
+    {# Резервация #}
+    <section id = "reservation" >
+        <h1>Резервація столів</h1>
+        <div class="container" class="align-items-center" style="border: 4px solid #C42323;
+    border-radius: 20px; margin: 0 auto">
+            <div class="col-md-12">
+                <form name="sendMessage" id = "contactForm" novalidate action="" method="post" style="margin: 10px">
+                    {% csrf_token %}
+                    <div class="row" style="margin: 10px">
+                        <div class="col-md-6">
+                            {{ form.user_name }}
                         </div>
+                        <div class="col-md-6">
+                            {{ form.user_email }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6" style="padding: 20px; margin: 0 auto">
+                            {{ form.message }}
+                        </div>
+                    </div>
+                    <p class="centre"> <button type="submit" class="btn btn-primary" style="width: 15%"> Відправити запит </button> </p>
+                </form>
+            </div>
         </div>
-                <button type="submit" class="btn btn-custom btn-lg"> button</button>
+
+    </section>
+    {# Test #}
+    {% comment %}<section id = "test">
+     <div class="container align-items-center" style="padding: 20px">
+        <div class="col-md-12" style="margin: 0 auto">
+            <form name="addCategory" id = "addCategorys" novalidate action="" method="post">
+                {% csrf_token %}
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        {{ form2.title }}
+                    </div>
+                    <div class="col-md-6" style="margin: 0 auto">
+                        <p class="centre"> Is visible? {{ form2.is_visible}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6" aria-placeholder="Порядок категорії">
+                        {{ form2.description }}
+                    </div>
+                    <div class="col-md-6">
+                        <p class="centre"> Is special? {{ form2.weight}}</p>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-6" aria-placeholder="Порядок категорії">
+                        {{ form2.photo }}
+                    </div>
+                    <div class="col-md-6">
+                        <p class="centre"> Is special? {{ form2.price}}</p>
+                    </div>
+                </div>
+                <p class="centre" style="padding-top: 20px"> <button type="submit" id="1" class="btn btn-primary"> Добавить категорию </button></p>
             </form>
         </div>
     </div>
+    </section>{% endcomment %}
 
-    </section>
 {% endblock %}
