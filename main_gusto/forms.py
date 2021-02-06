@@ -29,9 +29,8 @@ class CategoryAddForm(forms.ModelForm):
                                                                         'class': 'form-control',
                                                                         'placeholder': 'Назва категорії',
                                                                         'required': 'required'}))
-
-    is_visible = forms.BooleanField(widget=forms.NullBooleanSelect)
-    is_special = forms.BooleanField(widget=forms.NullBooleanSelect)
+    is_visible = forms.BooleanField(initial=True, required=False)
+    is_special = forms.BooleanField(initial=True, required=False)
     category_order = forms.IntegerField(widget=forms.TextInput(attrs={'type': 'number', 'id': 'category_order',
                                                                         'class': 'form-control',
                                                                         'placeholder': 'Порядок категорії',
@@ -41,9 +40,8 @@ class CategoryAddForm(forms.ModelForm):
         model = Category
         fields = ('title', 'category_order', 'is_visible', 'is_special')
 
+
 class DishAddForm(forms.ModelForm):
-
-
     title = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'type': 'text', 'id': 'title',
                                                                          'class': 'form-control',
                                                                          'placeholder': 'Назва блюда',
@@ -52,13 +50,13 @@ class DishAddForm(forms.ModelForm):
                                                                         'class': 'form-control',
                                                                         'placeholder': 'Ціна',
                                                                         'required': 'required'}))
-    is_visible = forms.BooleanField(widget=forms.NullBooleanSelect)
+    is_visible = forms.BooleanField(initial=True, required=False)
     description = forms.CharField(max_length=300, widget=forms.TextInput(attrs={'type': 'text', 'id': 'description',
                                                                          'class': 'form-control',
                                                                          'placeholder': 'Опис',
                                                                          'required': 'required'}))
     photo = forms.ImageField(widget=forms.FileInput)
-    category = 1
+    category = forms.Select()
     weight = forms.IntegerField(widget=forms.TextInput(attrs={'type': 'number', 'id': 'weight',
                                                                         'class': 'form-control',
                                                                         'placeholder': 'Вага',
