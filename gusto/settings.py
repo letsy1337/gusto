@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'menu_gusto',
     'events_gusto',
     'users_messages',
+    'accounts'
 ]
 
 MIDDLEWARE = [
